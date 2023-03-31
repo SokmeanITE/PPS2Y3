@@ -1,25 +1,32 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import "./Header.css"
+import $ from 'jquery'; 
+
 
 const Headers = () =>{
-  
+
   return (
-    <nav>
-  <ul class="menu">
-    <Link to="/"><li class="logo"><a href="#"></a></li></Link>
-    <img src="./image/logo.png" height="50" width="50" alt="" />
-    <Link to="/"><li class="item"><a href="#">Home</a></li></Link>
-    <Link to="/brand"><li class="item"><a href="#">Brand</a></li></Link>
-    <Link to="/laptop"><li class="item"><a href="#">Laptop</a></li></Link>
-    <Link to="/desktop"><li class="item"><a href="#">Desktop</a></li></Link>
-    <Link to="/accessories"><li class="item"><a href="#">Accessories</a></li></Link>
-    <Link to="/login"><li class="item button"><a href="#">Log In</a></li></Link>
-    <Link to="sigup"><li class="item button secondary"><a href="#">Sign Up</a></li></Link>
+    <header class="header-area">
     
-    <li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
-  </ul>
-</nav>
+    <div class="navbar-area">
+      <div class="container">
+        <nav class="site-navbar">
+          
+          <a href="#home" class="site-logo">logo</a>
+          <ul>
+            <Link to="/"><li><a href="#">Home</a></li></Link>
+            <Link to="/brand"><li><a href="#">Brand</a></li></Link>
+            <Link to="/laptop"><li><a href="#">Desktop</a></li></Link>
+            <Link to="/desktop"><li><a href="#">Laptop</a></li></Link>
+          </ul>
+          <button class="nav-toggler">
+            <span></span>
+          </button>
+        </nav>
+      </div>
+    </div>
+  </header> 
   )
 }
 export default Headers;
