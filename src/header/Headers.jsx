@@ -8,7 +8,6 @@ const Headers = () =>{
   return (
     <header class="header-area">
     
-    <div class="navbar-area">
       <div class="container">
         <nav class="site-navbar">
           
@@ -26,7 +25,6 @@ const Headers = () =>{
           </button>
         </nav>
       </div>
-    </div>
   </header> 
   )
 }
