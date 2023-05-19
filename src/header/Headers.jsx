@@ -1,8 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import "./Header.css"
-import $ from 'jquery'; 
-
+ 
 
 const Headers = () =>{
 
@@ -19,6 +18,8 @@ const Headers = () =>{
             <Link to="/brand"><li><a href="#">Brand</a></li></Link>
             <Link to="/laptop"><li><a href="#">Desktop</a></li></Link>
             <Link to="/desktop"><li><a href="#">Laptop</a></li></Link>
+            <Link to="/login"><li><a href="#">LogIn</a></li></Link>
+
           </ul>
           <button class="nav-toggler">
             <span></span>
