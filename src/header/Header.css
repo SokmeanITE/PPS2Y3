@@ -1,230 +1,171 @@
-* {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700');
+
+/* default css start */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.header-area {
+  background: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.5)),
+  url(https://images.unsplash.com/photo-1528353518104-dbd48bee7bc4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80);
+  background-position: center center;
+  background-size: cover;
+}
+/* default css end */
+
+
+/* navbar regular css start */
+.navbar-area {
+  background: rgba(0,0,0,.6);
+  border-bottom: 1px solid #000;
+}
+.site-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+a.site-logo {
+  font-size: 26px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #fff;
+  text-decoration: none;
+}
+.site-navbar ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+.site-navbar ul li a {
+  color: #fff;
+  padding: 20px;
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.site-navbar ul li a:hover {
+  background: rgba(255,255,255,.1);
+}
+/* navbar regular css end */
+
+
+/* nav-toggler css start */
+.nav-toggler {
+  border: 3px solid #fff;
+  padding: 5px;
+  background-color: transparent;
+  cursor: pointer;
+  height: 39px;
+  display: none;
+}
+.nav-toggler span, 
+.nav-toggler span:before, 
+.nav-toggler span:after {
+  width: 28px;
+  height: 3px;
+  background-color: #fff;
+  display: block;
+  transition: .3s;
+}
+.nav-toggler span:before {
+  content: '';
+  transform: translateY(-9px);
+}
+.nav-toggler span:after {
+  content: '';
+  transform: translateY(6px);
+}
+.nav-toggler.toggler-open span {
+  background-color: transparent;
+}
+.nav-toggler.toggler-open span:before {
+  transform: translateY(0px) rotate(45deg);
+}
+.nav-toggler.toggler-open span:after {
+  transform: translateY(-3px) rotate(-45deg);
+}
+/* nav-toggler css start */
+
+
+/* intro-area css start */
+.intro-area {
+  height: calc(100vh - 61px);
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+}
+.intro-area h2 {
+  font-size: 50px;
+  font-weight: 300;
+  line-height: 50px;
+  margin-bottom: 25px;
+}
+.intro-area p {
+  font-size: 18px;
+}
+/* intro-area css end */
+
+
+/* mobile breakpoint start */
+@media screen and (max-width: 767px) {
+  .container {
+    max-width: 720px;
   }
-  body {
-    font-family: "Popins" sans-serif;
-    font-size: 16px;
-  }
-  nav {
-    background: #F8B58A;
-    padding: 0 15px;
-    text-decoration: none;
-  }
-  a {
-    color: white;
-    text-decoration: none;
-    
-  }
-  .menu,
-  .submenu {
-    list-style-type: none;
-  }
-  .logo {
-    font-size: 20px;
-    padding: 1.2rem;
-  }
-  .item {
-    padding: 10px;
-  }
-  .item.button {
-    padding: 9px 5px;
-  }
-  .item:not(.button) a:hover,
-  .item a:hover::after {
-    color: #ccc;
-  }
-  /* Mobile menu */
-  .menu {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .menu li a {
+  /* navbar css for mobile start */
+  .nav-toggler{
     display: block;
-    padding: 15px 5px;
   }
-  .menu li.subitem a {
-    padding: 15px;
+  .site-navbar {
+    min-height: 60px;
   }
-  .toggle {
-    order: 1;
-    font-size: 20px;
+  .site-navbar ul {
+    position: absolute;
+    width: 100%;
+    height: calc(100vh - 60px);
+    left: 0;
+    top: 60px;
+    flex-direction: column;
+    align-items: center;
+    border-top: 1px solid #444;
+    background-color: rgba(0,0,0,.75);
+    max-height: 0;
+    overflow: hidden;
+    transition: .3s;
   }
-  .item.button {
-    order: 2;
-  }
-  .item {
-    order: 3;
+  .site-navbar ul li {
     width: 100%;
     text-align: center;
-    display: none;
   }
-  .active .item {
-    display: block;
+  .site-navbar ul li a {
+    padding: 25px;
   }
-  .button.secondary {
-    /* divider between buttons and menu links */
-    border-bottom: 1px #444 solid;
+  .site-navbar ul li a:hover {
+    background-color: rgba(255,255,255,.1);
   }
-  /* Submenu up from mobile screens */
-  .submenu {
-    display: none;
+  .site-navbar ul.open {
+    max-height: 100vh;
+    overflow: visible;
   }
-  .submenu-active .submenu {
-    display: block;
-  }
-  .has-submenu i {
-    font-size: 12px;
-  }
-  .has-submenu  > a::after {
-    font-family: "Font Awesome 5 Free";
-    font-size: 12px;
-    line-height: 16px;
-    font-weight: 900;
-    content: "\f078";
-    color: white;
-    padding-left: 5px;
-  }
-  .subitem a {
-    padding: 10px 15px;
-  }
-  .submenu-active {
-    background-color: #111;
-    border-radius: 3px;
-  }
-  .search
-{
-	border: 2px solid #CF5C3F;
-	overflow: auto;
-	border-radius: 5px;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
+  .intro-area h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+  }  
+  /* navbar css for mobile end */
 }
-
-.search input[type="text"]
-{
-	border: 0px;
-	width: 67%;
-	padding: 10px 10px;
-}
-
-.search input[type="text"]:focus
-{
-	outline: 0;
-}
-
-.search input[type="submit"]
-{
-	border: 0px;
-	background: none;
-	background-color: #CF5C3F;
-	color: #fff;
-	float: right;
-	padding: 10px;
-	border-radius-top-right: 5px;
-	-moz-border-radius-top-right: 5px;
-	-webkit-border-radius-top-right: 5px;
-	border-radius-bottom-right: 5px;
-	-moz-border-radius-bottom-right: 5px;
-	-webkit-border-radius-bottom-right: 5px;
-        cursor:pointer;
-}
-
-/* ===========================
-   ====== Medua Query for Search Box ====== 
-   =========================== */
-
-@media only screen and (min-width : 150px) and (max-width : 780px)
-{
-	{}
-	.search
-	{
-		width: 95%;
-		margin: 0 auto;
-	}
-
-}
-  
-  /* Tablet menu */
-  @media all and (min-width: 700px) {
-    .menu {
-      justify-content: center;
-    }
-    .logo {
-      flex: 1;
-    }
-    .item.button {
-      width: auto;
-      order: 1;
-      display: block;
-    }
-    .toggle {
-      flex: 1;
-      text-align: right;
-      order: 2;
-    }
-    /* Button up from tablet screen */
-    .menu li.button a {
-      padding: 10px 15px;
-      margin: 5px 0;
-    }
-    .button a {
-      background: #0080ff;
-      border: 1px royalblue solid;
-    }
-    .button.secondary {
-      border: 0;
-    }
-    .button.secondary a {
-      background: transparent;
-      border: 1px #0080ff solid;
-    }
-    .button a:hover {
-      text-decoration: none;
-    }
-    .button:not(.secondary) a:hover {
-      background: royalblue;
-      border-color: darkblue;
-    }
-    .search{
-        justify-content: right;
-        text-align: center;
-    }
-
-  }
-  /* Desktop menu */
-  @media all and (min-width: 960px) {
-    .menu {
-      align-items: flex-start;
-      flex-wrap: nowrap;
-      background: none;
-    }
-    .logo {
-      order: 0;
-    }
-    .item {
-      order: 1;
-      position: relative;
-      display: block;
-      width: auto;
-    }
-    .button {
-      order: 2;
-    }
-    .submenu-active .submenu {
-      display: block;
-      position: absolute;
-      left: 0;
-      top: 68px;
-      background: #111;
-    }
-    .toggle {
-      display: none;
-    }
-    .submenu-active {
-      border-radius: 0;
-    }
-  }
+/* mobile breakpoint end */
