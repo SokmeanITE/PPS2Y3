@@ -8,10 +8,10 @@ const Headers = () =>{
   return (
     <header class="header-area">
     
-      <div class="container">
+      <div class="container-navbar">
         <nav class="site-navbar">
           
-          <a href="#home" class="site-logo">logo</a>
+          <a href="/" class="site-logo" > <img src="https://cdn.shopify.com/s/files/1/0316/0804/5705/files/Front_page_banner_image.png?v=1669733107" alt=""/> </a>
           <ul>
             <Link to="/"><li><a href="#">Home</a></li></Link>
             <Link to="/brand"><li><a href="#">Brand</a></li></Link>

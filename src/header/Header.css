@@ -36,6 +36,7 @@ body{
   align-items: center;
 }
 a.site-logo {
+  margin-left: 20px;
   font-size: 26px;
   font-weight: 800;
   text-transform: uppercase;
